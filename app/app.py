@@ -11,7 +11,7 @@ from functools import wraps
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
-app.secret_key = 'your secret key'
+app.secret_key = 'NOTHINGISLIKEOURSECRETKEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../instance/database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
