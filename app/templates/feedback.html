@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUERY FORM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}">
+    <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+</head>
+
+<body>
+    <div class="feedback-container">
+        <form class="feedback-form" method="POST" action="/submit-feedback">
+            <h2>QUERY</h2>
+
+            <div class="input-group">
+                <label for="feedback-type">QUERY Type:</label>
+                <select id="feedback-type" name="feedback_type" onchange="showChallengeDropdown(this.value)">
+                    <option value="general">General Query</option>
+                    <option value="challenge">Challenge Issue</option>
+                </select>
+            </div>
+
+            <div class="input-group" id="challenge-dropdown" style="display: none;">
+                <label for="challenge">Select Challenge:</label>
+                <select id="challenge" name="challenge">
+                    <!-- Populate this dropdown with the names of your challenges -->
+                    <option value="">None</option>
+                    {% for challenge in challenges %}
+                    <option>{{ challenge }}</option>
+                    {% endfor %}
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="feedback-description">Your Query:</label>
+                <textarea id="feedback-description" name="feedback_description" rows="4"
+                    placeholder="Enter your query here..."></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+            <button type="button" class="back-button" onclick="window.history.back();">Back</button>
+        </form>
+    </div>
+</body>
+
+</html>

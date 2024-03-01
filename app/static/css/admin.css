@@ -1,0 +1,108 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.admin-header {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.admin-header h1 {
+    color: #201717;
+}
+
+.logout-button {
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block; /* Make the logout button a block to fill the width */
+    margin: 20px auto; /* Center the button */
+    width: fit-content;
+}
+
+.logout-button:hover {
+    background-color: #000000;
+    
+    color: #ffffff;
+}
+
+.admin-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.feedback-item {
+    background-color: rgba(0, 0, 0, 0.689);
+    color: #fff;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.answer {
+    background-color: rgba(0, 0, 0, 0.575);
+    color: #fff;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+.submit-button {
+    width: 100%;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 0.5rem;
+}
+
+.submit-button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+@media (max-width: 768px) {
+    .admin-header, .admin-content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-header, .admin-content {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .logout-button {
+        margin-top: 1rem;
+    }
+}

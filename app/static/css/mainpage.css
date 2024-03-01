@@ -1,0 +1,111 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    color: #ffffff;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+.nav-bar {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav-bar button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.nav-bar button:hover {
+    background-color: #555;
+}
+
+.feedback-container {
+    width: 90%; /* Increase width to take more space */
+    max-width: 800px; /* Increase max-width for larger screens */
+    margin-top: 1rem;
+    text-align: center;
+}
+h3 {
+    text-transform: uppercase;
+}
+
+
+.no-feedback {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.feedback {
+    background-color: rgba(27, 20, 20, 0.558);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    min-width: 300px; /* Minimum width for larger screens */
+}
+
+
+.feedback h3 {
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feedback p, .no-feedback p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.answers {
+    margin-top: 1rem;
+}
+
+.answer {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-left: 3px solid #ff0000;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar button {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 1rem;
+    }
+
+    .feedback-container, .no-feedback {
+        padding: 1rem;
+        margin-top: 0;
+    }
+
+    .feedback, .no-feedback {
+        padding: 0.5rem;
+
+        width: 90%;
+    }
+}

@@ -1,0 +1,88 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo-container {
+    text-align: center; /* Center logo container */
+    width: 100%; /* Full width to center the logo */
+    padding: 20px 0; /* Padding above and below the logo */
+    /* background: rgba(255, 255, 255, 0.9); A light background with some transparency */
+}
+
+.logo-container img {
+    max-width: 80%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Maximum height of the logo */
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 30%; /* Adjust the width of the login form if necessary */
+    min-width: 300px; /* Prevent the form from getting too small on smaller screens */
+    margin-top: 10px; /* Add some space between the logo and the form */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+button {
+    background-color: #ff0000; /* Red */
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4500; /* Darker Red */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-container img {
+        max-height: 100px; /* Smaller max height on mobile */
+    }
+    
+    .login-container {
+        width: 80%; /* Wider login form on small screens */
+    }
+}

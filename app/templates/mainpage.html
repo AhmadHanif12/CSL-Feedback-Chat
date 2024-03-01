@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Overview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainpage.css') }}">
+</head>
+<body>
+    <div class="nav-bar">
+        <button onclick="location.href='{{ url_for('logout') }}'">Logout</button>
+        <button onclick="location.href='{{ url_for('feedback') }}'">Submit Query</button>
+    </div>
+    <div class="feedbacks-container">
+        {% if feedbacks %}
+            {% for feedback in feedbacks %}
+                <div class="feedback">
+                    <h3>{{ feedback.feedback_type }}{% if feedback.challenge_name %}: {{ feedback.challenge_name }}{% endif %}</h3>
+                    <p>{{ feedback.description }}</p>
+                    <div class="answers">
+                        {% if feedback.answers %}
+                            {% for answer in feedback.answers %}
+                                <div class="answer">
+                                    <p>{{ answer.content }}</p>
+                                </div>
+                            {% endfor %}
+                        {% else %}
+                            <p class="no-answer">No answers yet.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-feedback">No Query has been submitted yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

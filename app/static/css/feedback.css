@@ -1,0 +1,95 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ff0000, #0000ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem; /* Add padding to prevent the form from touching the edges of the screen */
+}
+
+.feedback-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 500px; /* Max width for large screens */
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    color: #ffffff;
+    display: block; /* Ensure the label is on its own line */
+    margin-bottom: 5px;
+}
+
+.input-group select, 
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Add a subtle border */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+}
+.input-group textarea {
+    width: 96%; /* Ensures textarea is as wide as its container, accounting for padding */
+    padding: 10px; /* Padding inside the textarea */
+    border-radius: 5px; /* Rounded corners like other inputs */
+    border: 1px solid #ddd; /* Subtle border similar to other input fields */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    color: #000000; /* Text color for contrast */
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+
+button {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+.back-button {
+    background-color: #333;
+    margin-top: 5px;
+}
+
+.back-button:hover {
+    background-color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .feedback-container {
+        padding: 1rem;
+        max-width: 90%; /* Slightly smaller max width for smaller screens */
+    }
+}

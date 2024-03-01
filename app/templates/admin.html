@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Admin Dashboard</h1>
+        <a href="/logout" class="logout-button">Logout</a>
+    </header>
+    
+    <main class="admin-content">
+        {% if feedbacks %}
+            {% for feedback in feedbacks %}
+                <div class="feedback-item">
+                    <p>{{ feedback.description }}</p>
+                    <em><p>Submitted by: {{ feedback.user.email }}</p></em>  <!-- Add <em> tags here -->
+                    {% if feedback.challenge_name %}
+                        <em><p>Related to challenge: {{ feedback.challenge_name }}</p></em>  <!-- Add <em> tags here -->
+                    {% else %}
+                        <em><p>General Query</p></em>  <!-- Add <em> tags here -->
+                    {% endif %}
+                    {% for answer in feedback.answers %}
+                        <div class="answer">{{ answer.content }}</div>
+                    {% endfor %}
+                    <form action="/submit-answer/{{ feedback.id }}" method="POST">
+                        <textarea name="answer_content" required></textarea>
+                        <button type="submit" class="submit-button">Submit Answer</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="no-queries">No queries available.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
